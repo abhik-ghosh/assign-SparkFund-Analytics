@@ -7,5 +7,11 @@ filtered_data <- master_frame[which(master_frame$funding_round_type == suitable_
 
 
 country_groups <- group_by(master_frame, country_code)
-country_funding_amount <- summarise(country_groups, fund_amt=mean(raised_amount_usd, na.rm = T))
+country_funding_amount <- summarise(
+                            country_groups, 
+                            fund_amt=sum(raised_amount_usd, na.rm = T))
+
+country_funding_amount <- arrange(country_funding_amount, -fund_amt)
+
+top9 <- head(country_funding_amount, 9)
 

@@ -25,6 +25,6 @@ paste('Average funding amount of Private Equity type: ', prv_equity_type_avg_fun
 
 # Considering that Spark Funds wants to invest between 5 to 15 million USD 
 # per investment round, which investment type is the most suitable for it?
-suitable_investment_type <- subset(avg_funding_amount, fund_amt > 500000 & fund_amt > 1500000)
+suitable_investment_type <- subset(avg_funding_amount, fund_amt > 500000 & fund_amt < 1500000)
 print('Investment type is the most suitable for Spark Fund: ')
 print(suitable_investment_type$funding_round_type)
