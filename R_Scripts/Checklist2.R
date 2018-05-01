@@ -30,7 +30,7 @@ suitable_investment_type <- subset(avg_funding_amount, fund_amt > 500000 & fund_
 #print(suitable_investment_type$funding_round_type)
 
 # Workspace Clean-Up
-rm(round_type_groups, avg_funding_amount)
+#rm(round_type_groups, avg_funding_amount)
 
 # Solution
 

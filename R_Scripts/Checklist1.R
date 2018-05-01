@@ -47,6 +47,7 @@ max(unique_key)
 
 library(sqldf)
 notInComp <- sqldf('SELECT company_permalink FROM rounds2  EXCEPT SELECT permalink FROM companies')
+notInComp
 if(length(notInComp) > 0)
   missing_name_YN <- 'Y'
 
@@ -66,9 +67,9 @@ master_frame <-merge(rounds2,companies, by.x="company_permalink",
                      by.y="permalink",all=TRUE)
 
 # Workspace Clean-Up
-rm(companies, rounds2, npermalink, nname, nhomepage_url, ncategory_list,
-   nstatus, ncountrycode, nstatecode, nregion, ncity, nfoundedat, unique_key,
-   notInComp)
+#rm(companies, rounds2, npermalink, nname, nhomepage_url, ncategory_list,
+#   nstatus, ncountrycode, nstatecode, nregion, ncity, nfoundedat, unique_key,
+#   notInComp)
 
 
 # Solutions

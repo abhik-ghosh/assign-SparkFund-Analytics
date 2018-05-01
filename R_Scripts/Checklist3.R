@@ -7,7 +7,7 @@ filtered_data <- master_frame[
           suitable_investment_type$funding_round_type),]
 
 
-country_groups <- group_by(master_frame, country_code)
+country_groups <- group_by(filtered_data, country_code)
 country_funding_amount <- summarise(
                             country_groups, 
                             fund_amt=sum(raised_amount_usd, na.rm = T))
