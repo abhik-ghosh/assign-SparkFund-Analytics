@@ -1,5 +1,9 @@
-# Need 'master_frame' from Checkilist 1 and 
-# 'suitable_investment_type' from Checklist 2
+#################################################################
+# Objective : English Speaking Country Analysis
+# Input 1 : 'master_frame' from Checkilist 1 and 
+# Input 2 : 'suitable_investment_type' from Checklist 2
+#################################################################
+
 
 # filtering data based on the suitable funding types
 filtered_data <- master_frame[
@@ -13,6 +17,8 @@ country_funding_amount <- summarise(
                             fund_amt=sum(raised_amount_usd, na.rm = T))
 
 country_funding_amount <- arrange(country_funding_amount, -fund_amt)
+
+country_funding_amount <- country_funding_amount[!(country_funding_amount$country_code == ""),]
 
 top9 <- head(country_funding_amount, 9)
 

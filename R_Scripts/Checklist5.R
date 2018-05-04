@@ -1,6 +1,12 @@
-# A Dataframe with 'main_sectors' mapped for each company - master_data_sector
-# Top 3 English Speaking Country - USA, GBR, IND
-# Most Suitable Funding Type - suitable_investment_type
+#################################################################
+# Objective : Analysis based on countries, main sectors and FT
+# Input 1: 'main_sectors' mapped for each company - 
+#            master_data_sector(from checklist 4)
+# Input 2: Top 3 English Speaking Country - USA, GBR, IND
+#           (from checklist 3)
+# Input 3: Most Suitable Funding Type - 
+#           suitable_investment_type(from checklist 2)
+#################################################################
 
 # Select Only Suitable investment types from master data
 filtered_data <- master_data_sector[
@@ -24,8 +30,8 @@ getInvestmentCountPerSector <- function(input_data_frame) {
 getFilteredDataPerCountry <- function(input_data_frame, input_country_code) {
   return(subset(input_data_frame, 
                 input_data_frame$country_code == input_country_code & 
-                input_data_frame$raised_amount_usd > 500000 & 
-                input_data_frame$raised_amount_usd < 1500000)
+                input_data_frame$raised_amount_usd > 5000000 & 
+                input_data_frame$raised_amount_usd < 15000000)
   )
 }
 
@@ -103,7 +109,7 @@ D3_2nd_highest_investment_company <- D3_2nd_highest_investment[
   
 
 # Workspace clean-up
-rm(temp_df,filtered_data, master_data_sector)
+#rm(temp_df,filtered_data, master_data_sector)
 
 # Solution Data Frames ----
 # 1. Total number of investments(Count)

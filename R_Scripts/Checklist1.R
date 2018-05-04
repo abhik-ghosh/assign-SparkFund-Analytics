@@ -1,3 +1,10 @@
+#################################################################
+# Objective: Make sense of the  given data and create  
+# 'master_frame' for further analysis.
+# Input 1 : rounds2.csv input file 
+# Input 2 : companies.txt input file
+#################################################################
+
 setwd("../InputFiles")
 rm(list=ls())
 #reading of companies and round2 into dataframe.
@@ -84,21 +91,12 @@ companies_unique
 # Write the name of the column.
 unique_key_col
 
+
 # Are there any companies in the rounds2 file which are 
 # not present in companies? Answer yes or no: Y/N
 missing_name_YN
 
 # Create Master Frame by merging rounds2 and companies dataframe
 str(master_frame)
-
-write_list <- list(
-  'How many unique companies are present in rounds2?',
-  rounds2_unique,
-  'How many unique companies are present in companies?',
-  companies_unique
-)
-
-setwd("../OutputFiles")
-write.csv(write_list, "Checklist1.csv")
 
 setwd("../R_Scripts")
